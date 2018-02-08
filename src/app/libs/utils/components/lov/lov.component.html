@@ -1,0 +1,11 @@
+<div class="lov-autocomplete">
+  <i *ngIf="displayClearLovButton()" (click)="clearLovDataWithTemp()" class="fa fa-times" aria-hidden="true"></i>
+  <i *ngIf="displayRedoButton()" (click)="onBlurLov($event)" class="fa fa-repeat" aria-hidden="true"></i>
+  <p-autoComplete (onKeyUp)="onKeypress($event)" (onBlur)="onBlurLov($event)" (onSelect)="selectLovAutocompleteData($event)" [formControl]="query" [placeholder]="placeHolder"
+    [suggestions]="filteredData" (completeMethod)="searchData($event)" (onDropdownClick)="dropDownClick($event)" [dropdown]="true" [style]="{'width': '100%', 'display': 'flex'}"
+    [inputStyle]="{'width': '100%'}">
+    <ng-template let-lovItem pTemplate="item">
+      {{ setDisplayDropdownList(lovItem) }}
+    </ng-template>
+  </p-autoComplete>
+</div>

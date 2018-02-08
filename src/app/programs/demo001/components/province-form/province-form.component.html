@@ -1,0 +1,31 @@
+<form [formGroup]="formModel">
+
+  <div class="ui-g">
+    <!-- <div class="ui-g-3">
+      <label for="provinceCode">รหัสจังหวัด :</label>
+    </div>
+    <div class="ui-g-9">
+      <input type="text" style="width: 100%" formControlName="provinceCode" name="provinceCode" pInputText>
+    </div> -->
+    <div class="ui-g-12">
+      <cdgs-input-panel label="รหัสจังหวัด :">
+        <input type="text" style="width: 100%" formControlName="provinceCode" name="provinceCode" pInputText>
+      </cdgs-input-panel>
+    </div>
+  </div>
+
+  <div class="ui-g">
+    <!-- <div class="ui-g-3">
+      <label for="provinceDesc">ชื่อจังหวัด :</label>
+    </div>
+    <div class="ui-g-9">
+      <input type="text" style="width: 100%" formControlName="provinceDesc" name="provinceDesc" pInputText>
+    </div> -->
+    <div class="ui-g-12">
+        <cdgs-input-panel label="ชื่อจังหวัด :">
+            <input type="text" style="width: 100%" formControlName="provinceDesc" name="provinceDesc" pInputText>
+        </cdgs-input-panel>
+      </div>
+  </div>
+
+</form>

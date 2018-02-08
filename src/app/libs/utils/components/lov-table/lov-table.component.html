@@ -1,0 +1,42 @@
+<div class="ui-inputgroup" style="position: relative">
+  <input type="text" (keyup)="onKeypress($event)" [placeholder]="placeHolder" [required]="required" [formControl]="query"
+    style="width: 100%" pInputText>
+  <i *ngIf="state.isFetching" class="fa fa-circle-o-notch fa-spin fa-fw lov-loading-indicator" aria-hidden="true"></i>
+  <span class="lov-clear-btn" *ngIf="hasSelectedData() || hasQuery()" (click)="clearLovDataWithTemp()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </span>
+  <span class="sr-only">Loading...</span>
+  <button pButton icon="fa-search" (click)="search()"></button>
+</div>
+
+
+<p-dialog [positionTop]="16" [visible]="displayDialog" [responsive]="true" [width]="1000" [modal]="true" (onHide)="closeDialog()"
+  [closable]="false" [closeOnEscape]="true">
+  <p-header>ค้นหา</p-header>
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <div class="ui-inputgroup">
+        <input type="text" (keydown)="onKeypress($event)" [formControl]="dialogQuery" pInputText style="width: 100%">
+        <button pButton icon="fa-search" (click)="searchDialog()"></button>
+      </div>
+    </div>
+  </div>
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-dataTable [value]="state.results" selectionMode="single" [(selection)]="state.selectedData" [loading]="state.isFetching"
+        [paginator]="true" [rows]="state.paginator.limit" [totalRecords]="state.paginator.count" [responsive]="true" [lazy]="true"
+        (onLazyLoad)="onNextPage($event)" (onRowClick)="clickRow($event)">
+        <p-header>
+          <strong>{{ lovConfig.tableConfig.tableName }}</strong>
+        </p-header>
+        <p-column [style]="{'width':'38px'}" selectionMode="single"></p-column>
+        <p-column *ngFor="let col of lovConfig.tableConfig.columnDefs" [sortable]="true" [sortField]="col.fieldName" [header]="col.headerName"
+          [field]="lovConfig.mapFields[col.fieldName]" [style]="{'width': col.columnWidth }"></p-column>
+      </p-dataTable>
+    </div>
+  </div>
+  <p-footer>
+    <button pButton label="ตกลง" icon="fa-check" *ngIf="!onRowClickSelectData" [disabled]="!hasSelectedData()" (click)="submitDialog(state.selectedData)"></button>
+    <button pButton label="ยกเลิก" icon="fa-times" (click)="cancelDialog()"></button>
+  </p-footer>
+</p-dialog>

@@ -1,0 +1,19 @@
+.lov-loading-indicator {
+  position: absolute;
+  top: 25%;
+  right: 50px;
+  transform: translate(0, -50%);
+}
+
+.lov-autocomplete {
+  position: relative;
+  i {
+    position: absolute;
+    z-index: 999;
+    right: 0;
+    top: 50%;
+    margin-right: 2.5em;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+    <!-- <button class="btn-right" pButton icon="fa-minus" [disabled]="!validButtonDel" label="ลบข้อมูล" -->
+    <!-- (click)="deleteRow()"></button> -->
+    <cdgs-confirm-button class="btn-right" label="ลบข้อมูล" (onAccept)="deleteRow()"
+      iconButton="fa-minus" [disableButton]="validButtonDel" header="ยืนยันการลบข้อมูล"
+      message="ต้องการลบข้อมูลหรือไม่"></cdgs-confirm-button>
+    <button class="btn-right" pButton icon="fa-plus" [disabled]="!validButtonAdd" label="เพิ่มข้อมูล"
+      (click)="insertRow()"></button>
+  </div>
+</div>
+<div class="ui-g">
+  <div class="ui-g-12">
+    <ng-content></ng-content>
+  </div>
+</div>

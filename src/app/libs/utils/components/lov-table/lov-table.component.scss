@@ -1,0 +1,14 @@
+.lov-loading-indicator {
+  position: absolute;
+  top: 25%;
+  right: 40px;
+  transform: translate(0, -50%);
+}
+
+.lov-clear-btn {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

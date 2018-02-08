@@ -1,0 +1,122 @@
+{
+  "lov1Config": {
+    "tableConfig": {
+      "columnDefs": [{
+          "columnWidth": "20%",
+          "fieldName": "provinceId",
+          "headerName": "รหัสจังหวัด"
+        },
+        {
+          "columnWidth": "80%",
+          "fieldName": "provinceDetail",
+          "headerName": "ชื่อจังหวัด"
+        }
+      ],
+      "tableName": "ตารางทดสอบ LOV"
+    },
+    "serviceURI": "demoProvince",
+    "displayFields": [
+      "provinceId",
+      "provinceDetail"
+    ],
+    "mapFields": {
+      "provinceDetail": "provinceDesc",
+      "provinceId": "provinceCode"
+    },
+    "displaySeparator": "-"
+  },
+  "lovAutoConfig1": {
+    "serviceURI": "demoProvince",
+    "displayFields": [
+      "provinceDetail"
+    ],
+    "mapFields": {
+      "provinceDetail": "provinceDesc",
+      "provinceId": "provinceCode"
+    },
+    "wildcardsFormat": "?%"
+  },
+  "lovAutoConfig2": {
+    "serviceURI": "demoTwo",
+    "displayFields": [
+      "ampDesc"
+    ],
+    "mapFields": {
+      "ampDesc": "ampDesc",
+      "ampCd": "ampCd"
+    },
+    "lovCondition": {
+      "provinceId": "provinceCode"
+    }
+  },
+  "lovAutoConfig3": {
+    "serviceURI": "demoThree",
+    "displayFields": [
+      "tmbDesc"
+    ],
+    "mapFields": {
+      "tmbDesc": "tmbDesc",
+      "tmbCode": "tmbCode"
+    },
+    "lovCondition": {
+      "ampCd": "ampCd",
+      "provinceId": "provinceCode"
+    }
+  },
+  "lovAutoConfig4": {
+    "serviceURI": "demoProvince",
+    "displayFields": [
+      "provinceDetail"
+    ],
+    "mapFields": {
+      "provinceDetail": "provinceDesc",
+      "provinceId": "provinceCode"
+    },
+    "ignoreCondition": true
+  },
+  "lovAutoConfig5": {
+    "serviceURI": "demoTwo",
+    "displayFields": [
+      "ampDesc"
+    ],
+    "relatedFields": [
+      "provinceDetail",
+      "provinceId"
+    ],
+    "mapFields": {
+      "ampDesc": "ampDesc",
+      "ampCd": "ampCd",
+      "provinceDetail": "provinceDesc",
+      "provinceId": "provinceCode"
+    },
+    "lovCondition": {
+      "provinceId": "provinceCode"
+    },
+    "ignoreCondition": true
+  },
+  "lovAutoConfig6": {
+    "serviceURI": "demoThree",
+    "displayFields": [
+      "tmbDesc"
+    ],
+    "relatedFields": [
+      "ampDesc",
+      "ampCd",
+      "provinceDetail",
+      "provinceId"
+    ],
+    "mapFields": {
+      "tmbDesc": "tmbDesc",
+      "tmbCode": "tmbCode",
+      "ampDesc": "ampDesc",
+      "ampCd": "ampCd",
+      "provinceDetail": "provinceDesc",
+      "provinceId": "provinceCode"
+    },
+    "lovCondition": {
+      "ampCd": "ampCd",
+      "provinceId": "provinceCode"
+    },
+    "ignoreCondition": true
+  }
+}

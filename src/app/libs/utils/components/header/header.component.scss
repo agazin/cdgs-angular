@@ -1,0 +1,36 @@
+nav {
+  height: 80px;
+}
+
+.util-bar {
+  text-align: right;
+  margin: 8px;
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.icon-btn {
+  position: relative;
+  span {
+    cursor: pointer;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    margin: 0 4px;
+  }
+}
+
+.collapse.navbar-collapse {
+  color: white;
+  * {
+    padding: 0 4px;
+  }
+}
+
+.collapse {
+  display: block;
+}

@@ -1,0 +1,68 @@
+<div class="ui-g" *ngIf="!isMobileScreen(); else mobileScreen">
+  <div class="ui-g-12"></div>
+  <div class="ui-g-12 ui-g-nopad">
+
+    <div [ngSwitch]="mode">
+
+      <div *ngSwitchCase="'QUERY'" [ngStyle]="{'text-align': position}">
+        <button pButton icon="fa-search" label="ค้นหา" (click)="search()"></button>
+        <button pButton icon="fa-times" label="ยกเลิก" (click)="cancel()"></button>
+      </div>
+
+      <div *ngSwitchCase="'ADD'" [ngStyle]="{'text-align': position}">
+        <button pButton icon="fa-floppy-o" [disabled]="!inputValid" label="บันทึก" (click)="add()"></button>
+        <button pButton icon="fa-times" label="ยกเลิก" (click)="cancel()"></button>
+      </div>
+
+      <div *ngSwitchCase="'EDIT'" [ngStyle]="{'text-align': position}">
+        <button pButton icon="fa-floppy-o" label="บันทึก" (click)="edit()"></button>
+        <!-- <button pButton icon="fa-trash" label="ลบ" (click)="delete()"></button> -->
+        <cdgs-confirm-button iconButton="fa-trash" label="ลบ" (onAccept)="delete()" header="ยื่นยันการลบข้อมูล"
+          [disableButton]="true" message="ต้องการลบข้อมูลหรือไม่"></cdgs-confirm-button>
+        <button pButton icon="fa-times" label="ยกเลิก" (click)="cancel()"></button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<ng-template #mobileScreen>
+  <div class="ui-g">
+
+    <div style="width: 100%" [ngSwitch]="mode">
+
+      <div class="ui-g-12 ui-g-nopad" *ngSwitchCase="'QUERY'">
+        <div class="ui-g-12">
+          <button pButton icon="fa-search" label="ค้นหา" (click)="search()" style="width: 100%"></button>
+        </div>
+        <div class="ui-g-12">
+          <button pButton icon="fa-times" label="ยกเลิก" (click)="cancel()" style="width: 100%"></button>
+        </div>
+      </div>
+
+      <div class="ui-g-12 ui-g-nopad" *ngSwitchCase="'ADD'">
+        <div class="ui-g-12">
+          <button pButton icon="fa-floppy-o" label="บันทึก" (click)="add()" style="width: 100%"></button>
+        </div>
+        <div class="ui-g-12">
+          <button pButton icon="fa-times" label="ยกเลิก" (click)="cancel()" style="width: 100%"></button>
+        </div>
+      </div>
+
+      <div class="ui-g-12 ui-g-nopad" *ngSwitchCase="'EDIT'">
+        <div class="ui-g-12">
+          <button pButton icon="fa-floppy-o" label="บันทึก" (click)="edit()" style="width: 100%"></button>
+        </div>
+        <div class="ui-g-12">
+          <button pButton icon="fa-trash" label="ลบ" (click)="delete()" style="width: 100%"></button>
+        </div>
+        <div class="ui-g-12">
+          <button pButton icon="fa-times" label="ยกเลิก" (click)="cancel()" style="width: 100%"></button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</ng-template>

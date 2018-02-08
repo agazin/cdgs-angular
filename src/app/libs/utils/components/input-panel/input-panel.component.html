@@ -1,0 +1,20 @@
+<div class="ui-g">
+  <div [ngClass]="labelPosition === 'left' && edituig === undefined ? 'ui-g-4 ui-sm-12 ui-g-nopad' : labelPosition === 'left' && edituig !== undefined ? edituig +' ui-md-12 ui-sm-12 ui-g-nopad': 'ui-g-12 ui-g-nopad'">
+    <strong *ngIf="required && !inputValid; else notRequired" class="cdgs-input-label"
+      style="color: red">{{ label }}*</strong>
+    <ng-template #notRequired>
+      <strong class="cdgs-input-label">{{ label }}</strong>
+    </ng-template>
+  </div>
+  <div [ngClass]="labelPosition === 'left'  && edituig === undefined ? 'ui-g-8 ui-sm-12 ui-g-nopad' : labelPosition === 'left' && edituig !== undefined ? classUiFormControl: 'ui-g-12 ui-g-nopad'">
+    <div [ngClass]="msgPosition === 'horizon' ? 'ui-g-7 ui-g-nopad' : msgPosition === 'vertical' ? 'ui-g-12 ui-g-nopad' : 'ui-g-12 ui-g-nopad'">
+      <ng-content [formControl]="formControl"></ng-content>
+    </div>
+    <div *ngIf="!inputValid && msgPosition === 'horizon'" class="ui-g-5 ui-g-nopad">
+      <p class="cdgs-warning-message">
+        <i class="fa fa-times-circle"></i>
+        <span>{{invalidMsg}}</span>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<cdgs-province-form [formModel]="searchForm"></cdgs-province-form>
+<div class="ui-g">
+    <div class="ui-g-12">
+        <cdgs-button-panel mode="QUERY" (onCancel)="clearData()" (onSearch)="findProvinceByCondition()"></cdgs-button-panel>
+    </div>
+</div>
+<cdgs-province-table (rowClick)="onRowClick($event)" (insertRow)="onInsertRow()" [dataList]="(dataList | async)"></cdgs-province-table>

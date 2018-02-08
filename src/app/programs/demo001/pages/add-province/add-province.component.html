@@ -1,0 +1,8 @@
+<cdgs-page-subtitle text="บันทึก"></cdgs-page-subtitle>
+
+<cdgs-add-province-form [formModel]="addForm"></cdgs-add-province-form>
+<div class="ui-g">
+    <div class="ui-g-12">
+        <cdgs-button-panel (onAdd)="addProvince()" (onCancel)="toSearch()" [inputValid]="addForm.valid" mode="ADD"></cdgs-button-panel>
+    </div>
+</div>

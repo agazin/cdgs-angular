@@ -1,0 +1,19 @@
+<form [formGroup]="formModel">
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <cdgs-input-panel label="รหัสจังหวัด :" invalidMsg="กรุณาระบุรหัสจังหวัด" [required]="true" [inputValid]="formModel.get('provinceCode').valid">
+        <input type="text" pInputText style="width: 100%" formControlName="provinceCode">
+      </cdgs-input-panel>
+    </div>
+    <div class="ui-g-12">
+      <cdgs-input-panel label="ชื่อจังหวัด :" invalidMsg="กรุณาระบุชื่อจังหวัด" [required]="true" [inputValid]="formModel.get('provinceDesc').valid">
+        <input type="text" pInputText style="width: 100%" formControlName="provinceDesc">
+      </cdgs-input-panel>
+    </div>
+    <div class="ui-g-12">
+      <cdgs-input-panel label="สถานะ :" invalidMsg="กรุณาระบุสถานะ" [required]="true" [inputValid]="formModel.get('actflag').valid">
+        <p-dropdown [options]="statusOptions" formControlName="actflag"></p-dropdown>
+      </cdgs-input-panel>
+    </div>
+  </div>
+</form>

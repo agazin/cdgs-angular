@@ -1,0 +1,9 @@
+<ng-container [ngSwitch]="messageType">
+  <p-growl *ngSwitchCase="'growl'" [value]="(message$ | async)?.message"></p-growl>
+  <p-dialog *ngSwitchCase="'dialog'" [responsive]="true" [draggable]="false" [resizable]="false" [modal]="true" [header]="message.summary" [(visible)]="hasMessage">
+    {{ message.detail }}
+    <p-footer>
+      <button pButton label="ปิด" icon="fa-times" (click)="closeDialog()"></button>
+    </p-footer>
+  </p-dialog>
+</ng-container>

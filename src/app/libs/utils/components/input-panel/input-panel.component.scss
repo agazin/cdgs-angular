@@ -1,0 +1,39 @@
+.cdgs-input-label {
+  display: block;
+  width: auto;
+  font-size: 1em;
+}
+
+@media (min-width: 576px) {
+  .cdgs-input-label {
+    font-size: 0.875em !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .cdgs-input-label {
+    font-size: 1em !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .cdgs-input-label {
+    font-size: 1em !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cdgs-input-label {
+    font-size: 1em !important;
+  }
+}
+
+.cdgs-input-panel-container {
+  display: flex;
+}
+
+.cdgs-warning-message {
+  margin-left: 1em;
+  margin-bottom: 0;
+  color: red;
+}

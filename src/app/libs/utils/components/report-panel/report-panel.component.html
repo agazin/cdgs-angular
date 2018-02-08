@@ -1,0 +1,6 @@
+<p-panel header="ประเภทรายงาน">
+  <div *ngFor="let type of reportTypeList">
+    <p-radioButton [label]="type.description" [value]="type" name="reportType" [formControl]="reportType" (onClick)="onSelectReportType($event)"></p-radioButton>
+  </div>
+</p-panel>
+

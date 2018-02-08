@@ -1,0 +1,17 @@
+{
+  "/cdgsTemplateServices/api/template/query/*": {
+    "target": "http://10.254.40.93:7003",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/example/api/*": {
+    "target": "http://10.254.40.93:7003",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/api/lov/*": {
+    "target": "http://10.254.40.27:8000",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

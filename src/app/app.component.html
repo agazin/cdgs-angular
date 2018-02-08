@@ -1,0 +1,10 @@
+<ng-container *ngIf="isAuthenticated | async">
+  <cdgs-header></cdgs-header>
+  <div class="container">
+    <cdgs-message></cdgs-message>
+    <div class="container-margin--top">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <cdgs-footer></cdgs-footer>
+</ng-container>

@@ -1,0 +1,9 @@
+<cdgs-page-title text="lov"></cdgs-page-title>
+<form [formGroup]="lov1Form">
+  <cdgs-lov [lovName]="'lovAutoConfig1'" [(formData)]="lov1Form"></cdgs-lov>
+</form>
+<hr>
+<cdgs-page-title text="lov-table"></cdgs-page-title>
+<form [formGroup]="lov2Form">
+  <cdgs-lov-table [lovName]="'lov1Config'" [(formData)]="lov2Form"></cdgs-lov-table>
+</form>

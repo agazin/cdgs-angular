@@ -1,0 +1,12 @@
+<div class="card-container ui-corner-all card-dept-3" [ngStyle]="style" [ngClass]="styleClass">
+  <div *ngIf="header; else headerTemplate" class="card-header">
+    <div>
+      <strong>{{ header }}</strong>
+    </div>
+  </div>
+  <ng-template #headerTemplate>
+    <ng-content select="cdgs-card-header"></ng-content>
+  </ng-template>
+  <ng-content select="cdgs-card-content"></ng-content>
+  <ng-content select="cdgs-card-footer"></ng-content>
+</div>

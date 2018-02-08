@@ -1,0 +1,17 @@
+<img src="assets/images/man-potrait.png" class="rounded-circle" alt="user-avatar">
+<div class="user-detail">
+  <p>
+    <strong>
+      <cdgs-clock></cdgs-clock>
+    </strong>
+  </p>
+  <p>
+    <strong>ชื่อ :</strong>
+    <span>{{ (userDetail | async)?.userName }}</span>
+  </p>
+  <p>
+    <strong>บทบาท :</strong>
+    <span>{{ (userDetail | async)?.roleName }}</span>
+  </p>
+
+</div>

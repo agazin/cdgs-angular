@@ -1,0 +1,13 @@
+<cdgs-table [validButtonAdd]="true" (onInsertRow)="onClickInsertRow()">
+  <p-dataTable (onRowClick)="clickRow($event)" [value]="dataList">
+    <p-header>ตารางข้อมูลจังหวัด</p-header>
+    <p-column header="ลำดับ">
+      <ng-template pTemplate="body" let-i="rowIndex" >
+        {{ i+1 }}
+      </ng-template>
+    </p-column>
+    <p-column field="provinceCode" header="รหัสจังหวัด"></p-column>
+    <p-column field="provinceDesc" header="ชื่อจังหวัด"></p-column>
+    <p-column field="actflag" header="สถานะ"></p-column>
+  </p-dataTable>
+</cdgs-table>
